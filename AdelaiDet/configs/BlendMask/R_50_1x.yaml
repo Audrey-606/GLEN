@@ -1,0 +1,13 @@
+_BASE_: "Base-BlendMask.yaml"
+SEED: 11715851
+MODEL:
+  WEIGHTS: "./weights/GLEN_segment_SE.pth"
+  # WEIGHTS: "./output/blendmask_R_50_1x/model_final.pth"
+  RESNETS:
+    DEPTH: 50
+  ROI_HEADS:
+    NUM_CLASSES: 2  # 指定类别数量为 1
+SOLVER:
+  CHECKPOINT_PERIOD: 500  # 每500次迭代保存一次模型
+
+OUTPUT_DIR: "output/blendmask/R_50_1x"
